@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vader</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1 id="title">Anakin Skywalker</h1>
+        <img id="vader" src="images/vader1.png" alt="" />
+        <button onclick="change()">Click Here</button>
+      </div>
+    </div>
+    <script>
+      function change() {
+        let image = document.querySelector("#vader");
+        let imageSrc = image.getAttribute("src");
+        console.log(imageSrc);
+        console.log(image);
+
+        if (imageSrc == "images/vader1.png") {
+          document.querySelector("#title").innerHTML = `<p>Darth Vader</p>`;
+          document
+            .querySelector("#vader")
+            .setAttribute("src", "images/" + "vader2.webp");
+        } else {
+          document.querySelector(
+            "#title"
+          ).innerHTML = `<p>Anakin Skywalker</p>`;
+          document
+            .querySelector("#vader")
+            .setAttribute("src", "images/" + "vader1.png");
+        }
+      }
+    </script>
+  </body>
+</html>
